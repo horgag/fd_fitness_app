@@ -1,0 +1,7 @@
+# import '../../../response/category/category_response.graphql'
+
+query GetCategoryByType($categoryTitle: CategoryTitle!) {
+  categories(where: {categoryTitle: $categoryTitle}) {
+    ...CategoryFeed
+  }
+}

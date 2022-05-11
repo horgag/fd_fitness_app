@@ -1,0 +1,10 @@
+# import '../assets/asset_response.graphql'
+
+fragment CategoryFeed on Category {
+  id
+  title
+  categoryTitle
+  mainImage {
+    ...AssetResponse
+  }
+}

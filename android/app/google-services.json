@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "913823137832",
+    "project_id": "fd-way",
+    "storage_bucket": "fd-way.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913823137832:android:21244c2099f611dc68f51d",
+        "android_client_info": {
+          "package_name": "com.fdway.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913823137832-c5720ifjjiovvkq9nshth74dnorcjenb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fdway.android",
+            "certificate_hash": "f7da49a5636263fc23e601542f0e0466e999f34f"
+          }
+        },
+        {
+          "client_id": "913823137832-uptq8fshj8pabm6d06j3vpdqqvefslhr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fdway.android",
+            "certificate_hash": "e273905e7906f392cf20fe1d43751a0b59f8afb8"
+          }
+        },
+        {
+          "client_id": "913823137832-l5vbi24fq78sliev7khi84abqcqaaa2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANHRcfGO-eC2X96fpZr5Q_2UdEgJTrKo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913823137832-l5vbi24fq78sliev7khi84abqcqaaa2d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "913823137832-hqmg9bh4s5lrp77115n56fl9os1on0l8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fdway.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

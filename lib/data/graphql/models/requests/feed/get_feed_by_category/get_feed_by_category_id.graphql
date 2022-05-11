@@ -1,0 +1,9 @@
+
+# import '../../../response/feed/feed_response.graphql'
+
+# Be careful to specify the correct path to corresponding fragments
+query FeedByCategoryId($categoryID: ID!) {
+  feedItems(where: {categories_some: {id: $categoryID}}) {
+   ...FeedResponse
+  }
+}

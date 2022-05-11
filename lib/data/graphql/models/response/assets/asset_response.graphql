@@ -1,0 +1,7 @@
+fragment AssetResponse on Asset {
+  id
+  size
+  url
+  fileName
+  mimeType
+}

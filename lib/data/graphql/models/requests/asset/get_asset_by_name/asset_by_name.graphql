@@ -1,0 +1,7 @@
+# import '../../../response/assets/asset_response.graphql'
+
+query GetAssetByFileName($assetFileName: String!) {
+  assets(where: {fileName_contains: $assetFileName}) {
+    ...AssetResponse
+  }
+}

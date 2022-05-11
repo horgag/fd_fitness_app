@@ -1,0 +1,55 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Build app and upload to app store"
+  lane :upload_to_app_store do
+    keychain_password = SecureRandom.uuid
+    increment_build_number(
+      build_number: ENV["BUILD_NUMBER"]
+    )
+    create_keychain(
+      name: ENV["KEYCHAIN_NAME"],
+      password: keychain_password,
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600
+    )
+    import_certificate(
+      certificate_path: ENV["CERTIFICATE_PATH"],
+      keychain_name: ENV["KEYCHAIN_NAME"],
+      keychain_password: keychain_password
+    )
+    install_provisioning_profile(
+      path: "./ios-build.mobileprovision"
+    )
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: ENV["PROJECT_PATH"]
+    )
+    update_project_provisioning(
+      xcodeproj: ENV["PROJECT_PATH"],
+      profile: "ios-build.mobileprovision"
+    )
+    update_project_team(
+      path: ENV["PROJECT_PATH"],
+      teamid: ENV["TEAM_ID"]
+    )
+    gym(
+      workspace: ENV["WORKSPACE_PATH"],
+      output_directory: ENV["OUTPUT_PATH"],
+      scheme: "Runner",
+      codesigning_identity: ENV["CODE_SIGNING_IDENTITY"],
+      export_team_id: ENV["TEAM_ID"],
+      export_options: {
+        method: "app-store",
+        provisioningProfiles: {
+          "com.thefdway.ios" => "FD Way Distribution Provisioning Profile"
+        },
+        signingStyle: "manual"
+      }
+    )
+    delete_keychain(
+      name: "ios-build.keychain"
+    )
+  end
+end

@@ -1,0 +1,15 @@
+# import '../assets/asset_response.graphql'
+
+fragment FeedResponse on FeedItem {
+  id
+  title
+  subtitle
+  mainContent
+  description
+  mainImage {
+    ...AssetResponse
+  }
+  video {
+    ...AssetResponse
+  }
+}

@@ -1,0 +1,51 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    options = {isStarted: true}
+    sendSlack(options)
+    upload_to_play_store(
+      track: 'internal',
+      aab: '../build/app/outputs/bundle/release/app-release.aab' ,
+      json_key_data: ENV['JSON_KEY_DATA']
+    )
+    options[:isStarted] = false
+    sendSlack(options)
+  end
+
+  desc "Send to Slack"
+  lane :sendSlack do |options|
+    startedOrFinishedMsg = "#{options[:isStarted] ? "\u{1F680} Uploading bundle to Google Play internal testing" : "\u{1F3C1} Finished"}"
+    time = "#{Time.now.strftime("%d.%m.%Y (%A) %H:%M:%S")}"
+    message = "#{startedOrFinishedMsg}\nBuild number: v#{ENV["BUILD_NUMBER_KEY"]}\nTime: #{time}"
+    UI.important message
+
+   slack(
+     message: message,
+     slack_url: ENV["INT_FD_WAY_SLACK_WEBHOOK"],
+     success: true,        # Optional, defaults to true.
+     payload: { },  # Optional, lets you specify any number of your own Slack attachments. 
+     attachment_properties: { # Optional, lets you specify any other properties available for attachments in the slack API (see https://api.slack.com/docs/attachments).
+       color: options[:color],   
+       # This hash is deep merged with the existing properties set using the other properties above. This allows your own fields properties to be appended to the existing fields that were created using the `payload` property for instance.
+       thumb_url: "http://www.pngmart.com/files/6/Rocket-PNG-Clipart.png",
+     }
+   )
+ end
+end

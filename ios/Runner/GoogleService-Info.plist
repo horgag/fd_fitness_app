@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>913823137832-dl5ddg21a6buu2vgcnnmunentb7rndni.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.913823137832-dl5ddg21a6buu2vgcnnmunentb7rndni</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>913823137832-c5720ifjjiovvkq9nshth74dnorcjenb.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBgcdGfHo3jn7wq-rIm41MfIL685ZeA9cM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>913823137832</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.thefdway.ios</string>
+	<key>PROJECT_ID</key>
+	<string>fd-way</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fd-way.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:913823137832:ios:5a3e902b6de6c75a68f51d</string>
+</dict>
+</plist>

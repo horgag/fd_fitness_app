@@ -1,0 +1,7 @@
+# import '../../../response/assets/asset_response.graphql'
+
+query GetAssetById($assetID: ID!) {
+  assets(where: {id: $assetID}) {
+      ...AssetResponse
+  }
+}

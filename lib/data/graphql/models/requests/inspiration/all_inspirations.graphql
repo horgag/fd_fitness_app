@@ -1,0 +1,7 @@
+# import '../../response/inspiration/inspiration_response.graphql'
+
+query AllInspirations {
+  inspirationItems {
+      ...InspirationResponse
+  }
+}

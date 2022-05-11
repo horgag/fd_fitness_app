@@ -1,0 +1,12 @@
+# import '../assets/asset_response.graphql'
+
+fragment InspirationResponse on InspirationItem {
+  id
+  title
+  mainImage {
+   ...AssetResponse
+  }
+  video {
+    ...AssetResponse
+  }
+}
